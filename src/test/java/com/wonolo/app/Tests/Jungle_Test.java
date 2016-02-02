@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import static com.wonolo.app.Wonolo.Assertions.jungle_assertEqual;
 import static com.wonolo.app.Wonolo.Assertions.jungle_assertTrue;
@@ -52,9 +53,7 @@ public class Jungle_Test extends JungleMethods {
           String actual_taxes = getText(By.id("taxes"));
           String actual_total = getText(By.id("total"));
           log(actual_subtotal);
-          double tax = Double.valueOf(actual_subtotal.substring(1))*rate;
-          double total = Double.valueOf(actual_subtotal.substring(1)) + tax;
-          jungle_assertEqual(subtotal, actual_subtotal.substring(1), "Expected total price not found for " + testName + " state:  " + state);
+          jungle_assertEqual(subtotal, actual_subtotal.substring(1), "Expected subtotal price not found for " + testName + " state:  " + state);
       } catch (Exception e) {
          logError("Jungle_Socks_Order_Test", e);
       }

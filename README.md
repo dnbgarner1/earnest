@@ -1,9 +1,9 @@
 # Wonolo-JRI automation ##########################################################
 # github info
- https://github.com/wonolodoug
- username: wonolodoug
+ https://github.com/earnest
+ username: dnbgarner1
  password: sandman1
- repo:     wono_dug
+ repo:     earnest
 
 
 #test can be run from any ide , such as itellij or pycharm
