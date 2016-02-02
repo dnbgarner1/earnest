@@ -17,7 +17,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Objects;
 
-import static com.wonolo.app.Wonolo.PageMethods.WonoloMethods.log;
+import static com.wonolo.app.Wonolo.PageMethods.JungleMethods.log;
 
 public class Client_Requests {
 
@@ -42,7 +42,7 @@ public class Client_Requests {
 
       //}
       else {
-         Assertions.wonolo_fail("Failed to Execute Get Response Code :" + code);
+         Assertions.jungle_fail("Failed to Execute Get Response Code :" + code);
          //log(jsonResult);
       }
       response.getEntity().getContent().close();

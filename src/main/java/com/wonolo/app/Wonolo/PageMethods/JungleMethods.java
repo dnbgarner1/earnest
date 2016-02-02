@@ -1,8 +1,7 @@
 package com.wonolo.app.Wonolo.PageMethods;
 
 
-import com.wonolo.app.Wonolo.PageElements.WonoloElements;
-import com.wonolo.app.Wonolo.Assertions;
+import com.wonolo.app.Wonolo.PageElements.JungleElements;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -16,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 
-public class WonoloMethods extends WonoloElements {
+public class JungleMethods extends JungleElements {
     //Basic Logging
     public static File logFile() {
         new File("logs").mkdirs();
@@ -64,47 +63,5 @@ public class WonoloMethods extends WonoloElements {
 
     public static String randomUpper(String testNamePrefix) {
         return testNamePrefix + RandomStringUtils.randomAlphabetic(6).toUpperCase();
-    }
-
-    public static void logIn(WebDriver driver, String userID, String password) throws Exception {
-        driver.findElement(By.cssSelector(username)).sendKeys(userID);
-        driver.findElement(By.cssSelector(pwd)).sendKeys(password);
-        driver.findElement(By.cssSelector(signin)).click();
-    }
-
-    public void deleteJob() throws Exception {
-        if((driver.findElement(By.cssSelector(job_title)).isDisplayed())) {
-            driver.findElement(By.cssSelector(deleteJob)).click();
-            Thread.sleep(1500);
-            driver.findElement(By.cssSelector(confirmDelete)).click();
-        }
-    }
-
-    public void createJob(String jobName, String tasks, String slots, String workvenue, String workaddress, String workcity, String workzip, String workwage) throws Exception {
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector(requestName)).sendKeys(jobName);
-        driver.findElement(By.cssSelector(desTasks)).sendKeys(tasks);
-        driver.findElement(By.cssSelector(numSlots)).sendKeys(slots);
-        driver.findElement(By.cssSelector(venue)).sendKeys(workvenue);
-        driver.findElement(By.cssSelector(address)).sendKeys(workaddress);
-        driver.findElement(By.cssSelector(city)).sendKeys(workcity);
-        driver.findElement(By.cssSelector(zip)).sendKeys(workzip);
-        driver.findElement(By.cssSelector(wage)).sendKeys(workwage);
-    }
-    //Team methoda
-    public void createTeam(String teamName) throws Exception  {
-        //Steps to create a new Team
-        driver.findElement(By.cssSelector(addTeam)).click();
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(addFirstTeam)).click();
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(addTeamName)).sendKeys(teamName);
-        driver.findElement(By.cssSelector(saveTeam)).click();
-    }
-
-    public void deleteTeam() throws Exception {
-        driver.findElement(By.xpath(deleteTeam)).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector(confirmDelete)).click();
     }
 }

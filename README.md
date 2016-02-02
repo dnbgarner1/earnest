@@ -6,12 +6,10 @@
  repo:     wono_dug
 
 
-#How To Add/Remove data for tests cases###########################################
-Additional test cases can be added by adding rows to the listarrays in the Datprovider class
+#test can be run from any ide , such as itellij or pycharm
+#requires java 1.8.0 with testng
+#you may need to install maven or download selenium webdriver manually
+#or follow the instructions here http://www.seleniumhq.org/docs/03_webdriver.jsp#setting-up-webdriver-project
 
-#How to run#######################################################################
-#From IDE
-Highlight the test desired to run, right click, select run
-#From terminal
-go to working directory -> c:\wono_dug
-type 'mvn' at the prompt
+
+#data does not have to be provided by data provider , I could have just useed my own list arrays

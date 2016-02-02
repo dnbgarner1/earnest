@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * Created by Doug on 1/23/2016.
  */
 
-public class WonoloDriver {
+public class JungleDriver {
 
     public WebDriver driver;
 
